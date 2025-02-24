@@ -1,4 +1,3 @@
-
 # 🍷 레드 와인 품질 예측 프로젝트
 
 이 프로젝트는 **레드 와인**과 **화이트 와인**의 품질을 예측하는 머신 러닝 모델을 구축하는 것입니다. 주어진 데이터셋을 사용하여 **회귀** 및 **분류** 모델을 학습시키고, 다양한 모델을 앙상블하여 예측 성능을 향상시키는 방법을 구현합니다.
@@ -7,10 +6,13 @@
 
 ## 📊 데이터셋
 
-- **데이터 출처**:
 
+- **데이터 출처**:
   - `winequality-red.csv`
-  - `winequality-white.csv`
+  - https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009
+- - `winequality-white.csv`
+  - https://www.kaggle.com/code/gcdatkin/white-wine-quality-prediction/input
+  - 
 - **설명**: 각 레드 와인과 화이트 와인 샘플의 여러 화학적 특성(`pH`, `alcohol`, `sulphates` 등)과 품질 점수(`quality`)가 포함된 데이터셋입니다.
 - **목표**: 주어진 화학적 특성들로부터 와인의 품질을 예측하는 모델을 생성합니다.
 
@@ -67,7 +69,6 @@
    pip install -r requirements.txt
    ```
 
-
 **requirements.txt** 파일에는 다음과 같은 필수 패키지들이 포함됩니다:
 
 • xgboost
@@ -83,8 +84,6 @@
 • seaborn
 
 ---
-
-
 
 ## 🤖모델 학습
 
@@ -114,24 +113,19 @@
 
 • XGBoost 분류 : **XGBoost** 모델을 사용하여 앙상블 방식으로 성능을 최적화합니다.
 
-
 ### 3.앙상블 모델
 
 **VotingClassifier**를 사용하여 **XGBoost**, **로지스틱 회귀**, **SVM** 모델을 결합합니다. 이 방식은 각 모델의 예측을 **다수결 투표 방식**으로 결합하여 최종 예측을 도출합니다.
 
-
 ### 4. 성능 평가
 
 모델 성능은 **정확도(Accuracy)** , **정밀도(Precision)**, **재현율(Recall)** 등을 사용하여 평가합니다.
-
 
 ### 5. 혼동 행렬 시각화
 
 각 모델의 예측 결과에 대한 **혼동 행렬**을 시각화하여 예측 성능을 분석합니다.
 
 ---
-
-
 
 ## ▶️ 실행 방법
 
@@ -145,8 +139,6 @@ python wine_quality_model.py
 
 ---
 
-
-
 ## 🏆 결과
 
 • **앙상블 모델**은 약 76%의 정확도로 예측 성능을 보였으며, **XGBoost**와 **로지스틱 회귀**, **SVM**의 결합으로 좋은 성능을 발휘했습니다.
@@ -154,8 +146,6 @@ python wine_quality_model.py
 • 회귀 모델에서는 **랜덤 포레스트 회귀**와 **XGBoost 회귀** 모델이 좋은 성능을 보였으며, **선형 회귀** 모델은 상대적으로 성능이 떨어졌습니다.
 
 ---
-
-
 
 ## 📚 참고
 
